@@ -2,4 +2,35 @@
     meow
 </h1>
 
-<img src = "boykisser.png"> </img>
+<input id="image" type="image" src="boykisser.png">
+<audio id="meow" src="m-e-o-w.mp3"></audio>
+
+<script>
+    const audio = document.getElementById("meow");
+    const image = document.getElementById("image");
+
+    image.addEventListener('click', () => play());
+
+    function play() {
+        audio.play();
+
+        blur();
+    }
+    function blur() {
+        image.style.filter = 'blur(5px)';
+
+        flip();
+
+        setTimeout(() => {
+            image.style.filter = 'none';
+        }, 2000);
+    }
+    function flip() {
+        image.style.transition = 'transform 1s ease';
+        image.style.transform = 'rotateX(180deg)';
+
+        setTimeout(() => {
+            image.style.transform = 'rotateX(0deg)';
+        }, 1000);
+    }
+</script>
