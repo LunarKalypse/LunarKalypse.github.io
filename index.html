@@ -12,6 +12,7 @@
     image.addEventListener('click', () => play());
 
     function play() {
+        audio.currentTime = 0.2;
         audio.play();
 
         blur();
